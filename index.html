@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría de Facebook Ads para Principiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1877F2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Asesoría de Facebook Ads para Principiantes</h1>
+            <p class="hero-subtitle">Consigue más clientes aprendiendo cómo diseñar campañas publicitarias efectivas y atractivas.</p>
+            <a href="https://wa.me/c/593979192219" class="btn-cta" target="_blank">¡Agenda Ahora! <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#" onclick="mostrarSeccion('guia')">Guía Paso a Paso</a></li>
+            <li><a href="#" onclick="mostrarSeccion('calculadora')">Calculadora</a></li>
+            <li><a href="#" onclick="mostrarSeccion('consejos')">Consejos</a></li>
+            <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main id="contenido">
+        <section id="guia" class="container">
+            <h2>Guía Paso a Paso para Crear Campañas Exitosas</h2>
+            <ol>
+                <li>Accede a <a href="https://www.facebook.com/business/tools/ads-manager" target="_blank">Facebook Ads Manager</a>.</li>
+                <li>Haz clic en "Crear" y selecciona un objetivo de campaña.</li>
+                <li>Define tu público objetivo con precisión.</li>
+                <li>Selecciona dónde aparecerán tus anuncios.</li>
+                <li>Establece tu presupuesto diario y duración.</li>
+                <li>Crea anuncios atractivos con imágenes y textos persuasivos.</li>
+                <li>Monitorea los resultados y ajusta según el rendimiento.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Asesoría de Facebook Ads para Principiantes</p>
+    </footer>
+
+    <script>
+        function mostrarSeccion(seccion) {
+            const contenido = document.getElementById('contenido');
+            let html = '';
+            if (seccion === 'calculadora') {
+                html = `<section class="container">
+                    <h2>Calculadora de Presupuesto</h2>
+                    <form id="calculadoraForm">
+                        <label for="presupuesto">Presupuesto Diario (USD):</label>
+                        <input type="number" id="presupuesto" required>
+                        <label for="duracion">Duración (días):</label>
+                        <input type="number" id="duracion" required>
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <p id="resultado"></p>
+                </section>`;
+            } else if (seccion === 'consejos') {
+                html = `<section class="container">
+                    <h2>Consejos para Optimizar tus Anuncios</h2>
+                    <ul>
+                        <li>Analiza métricas clave como CTR y ROAS.</li>
+                        <li>Prueba diferentes formatos de anuncios.</li>
+                        <li>Ajusta tu segmentación de público.</li>
+                        <li>Usa textos persuasivos.</li>
+                        <li>Mantén una creatividad visual coherente con tu marca.</li>
+                    </ul>
+                </section>`;
+            } else if (seccion === 'contacto') {
+                html = `<section class="container">
+                    <h2>Contacto</h2>
+                    <p>¿Necesitas asesoría personalizada? ¡Contáctanos!</p>
+                    <form id="contactoForm">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <p><a href="https://wa.me/c/593979192219" target="_blank">WhatsApp</a></p>
+                    <p><a href="https://www.facebook.com/MarketingEnFacebook" target="_blank">Facebook</a></p>
+                </section>`;
+            } else {
+                html = document.getElementById('guia').outerHTML;
+            }
+            contenido.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
